@@ -1,0 +1,83 @@
+﻿@model LinkedinProfile.Models.Education
+
+
+<div class="modal-header ">
+    <h4 class="modal-title" id="myModalLabel">Eğitimi Güncelle</h4>
+    <button type="button" class="close closeButton" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+</div>
+<div class="modal-body ">
+    <form id="editEducation" method="post" action="/Education/Edit" enctype="multipart/form-data">
+        <fieldset>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="educationId" value="@Model.EducationId"/>
+            <input type="hidden" name="userId" value="@Model.UserId"/>
+            <div class="form-group row">
+                <label class="col-md-3 col-3 text-right control-label">Okul Adı: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="schoolName" name="schoolName" value="@Model.SchoolName" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Derece: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="degree" name="degree" value="@Model.Degree" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Bölüm: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="fieldOfStudy" name="fieldOfStudy" value="@Model.FieldOfStudy" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Başlangıç Tarihi: </label>
+                <input  class="form-control col-md-8 col-8 datepicker" type="datetime" id="startDate" name="startDate" value="@Model.StartDate.ToString("dd.MM.yyyy")" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Bitiş Tarihi: </label>
+                <input  class="form-control col-md-8 col-8 datepicker" type="datetime" id="endDate" name="endDate" value="@Model.EndDate?.ToString("dd.MM.yyyy")" autocomplete="off"/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Not: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="gpa" name="gpa" value="@Model.Gpa" autocomplete="off"/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Açıklama: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="description" name="description" value="@Model.Description" autocomplete="off"/>
+            </div>
+            <div class="form-group ">
+                <div class="float-left ml-2">
+                    <a href="/Education/DeleteEducation?educationId=@Model.EducationId" class=" btn btn-danger" >Eğitimi Sil</a>
+                </div>
+                <div class="float-right ml-2">
+                    <input type="submit" style="margin-left:3px" value="Kaydet" class="btn btn-primary" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script>
+    $(document).ready(function () {
+        $( "#startDate" ).datepicker();
+        $( "#endDate" ).datepicker();
+    });
+        
+    $('.closeButton').on('click', function () {
+     location.reload();
+    });
+
+    $('.datepicker').datepicker({
+
+        dateFormat: "dd.mm.yy",
+        changeYear: true,
+        yearRange: "-10:+10",
+        //yearRange: "-100:-18",
+        monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+        dayNamesMin: ["Pa", "Pt", "Sl", "Ça", "Pe", "Cu", "Ct"],
+        firstDay: 1,
+        defaultDate: null,
+    });
+
+
+        $("#gpa").on("keypress", function(evt) {
+          var keycode = evt.charCode || evt.keyCode;
+          if (keycode == 46) {
+            return false;
+          }
+});
+</script>

@@ -1,0 +1,42 @@
+﻿@model LinkedinProfile.Models.User
+
+<style>
+    #userInfosPanel {
+        margin-left:25px;
+    }
+</style>
+
+<div>
+    <div class="row" id="userInfosPanel">
+        <div class="col-md-12">
+            <div class="row">
+               <h4>@Model.Firstname @Model.Lastname.ToUpper()</h4> 
+            </div>
+            <div class="row">
+               <span style="font-size: 18px;">@Model.Profiles.FirstOrDefault().Headline</span>
+            </div>
+            <div class="row">
+                <span class="text-secondary">@Model.City,&nbsp;@Model.Country </span>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="#">@Model.ConnectionUsers.ToList().Count bağlantı</a>&nbsp;&nbsp;-&nbsp;&nbsp;<a href="javascript:ModalEdit('/User/CommunicationInfos?id=@Model.UserGuid');">İletişim Bilgileri</a>
+            </div>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
+
+<div id='myModal' class='modal fade in'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function ModalEdit(url) {
+        $('#myModalContent').load(url, function () {
+            $('#myModal').modal({
+                keyboard: true
+            }, 'show');
+        });
+    }
+</script>

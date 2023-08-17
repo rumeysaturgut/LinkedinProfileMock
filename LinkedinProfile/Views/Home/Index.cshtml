@@ -1,0 +1,49 @@
+﻿@using LinkedinProfile.Models
+@model dynamic
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    
+    .circleBase {
+        border-radius: 50%;
+    }
+
+    .type1 {
+        width: 180px;
+        height: 180px;
+        border: 6px solid white;
+        background-image: url('../img/profile.png');
+        background-size: contain;
+        position:absolute;
+        top:90px;
+        left:40px;
+    }
+    .profile-banner {
+        height:200px;
+        background-image: url('../img/profile-banner.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-size: 100%;
+
+    }
+</style>
+
+<div class="container">
+    <div class="row profile-banner">
+        <div class="col-md-12">
+            <div class="circleBase type1">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6" id="userInfos"></div>
+        <div class="col-md-6"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+
+</script>

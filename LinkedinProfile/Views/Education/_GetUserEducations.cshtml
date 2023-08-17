@@ -1,0 +1,53 @@
+﻿@model List<LinkedinProfile.Models.Education>
+
+<style>
+    .companyIcon {
+        width: 50px;
+        height: 50px;
+        background-size: contain;
+        position:absolute;
+    }
+</style>
+
+@foreach (LinkedinProfile.Models.Education education in Model)
+{
+    
+    <div class="row">
+        <div class="col-md-1">
+            <div class="companyIcon" style="background-image: url('../img/@(education.SchoolName.ToLower()).jpg');"></div>
+        </div>
+        <div class="col-md-11">
+            <div class="row">
+                <div class="col-md-6 pl-0">
+                    <h5>@education.SchoolName</h5> 
+                </div>
+                <div class="col-md-6 mt-2" align="right">
+                    <a href="javascript:ModalEdit('/Education/EditEducation?educationId=' + @education.EducationId);"><i class="fa fa-edit" style="font-size:25px; color:black;"></i></a>
+                </div>
+            </div>
+            <div class="row">
+               <span style="font-size: 18px;">@education.Degree, @education.FieldOfStudy</span>
+            </div>
+            <div class="row">
+                <span class="text-secondary">@education.StartDate.Year - @(education.EndDate?.Year.ToString() ?? "Halen")</span>
+            </div>
+            @if(education.Gpa != null)
+            {
+                <div class="row">
+                    <span style="font-size: 18px;">Not: @education.Gpa</span>
+                </div>
+            }
+            @if(education.Description != null)
+            {
+                <br />
+                <div class="row">
+                    <span style="font-size: 18px;">@education.Description</span>
+                </div>
+            }
+
+            
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+    <hr />
+}

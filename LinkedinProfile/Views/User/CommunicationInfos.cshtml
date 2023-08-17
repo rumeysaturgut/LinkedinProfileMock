@@ -1,0 +1,33 @@
+﻿@model LinkedinProfile.Models.User
+
+<div class="modal-header ">
+    <h4 class="modal-title" id="myModalLabel">@Model.Firstname @Model.Lastname.ToString().ToUpper()</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+</div>
+<div class="modal-body ">
+    <fieldset>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <h4>İletişim Bilgileri</h4> 
+        <div class="row">
+            <div class="col-md-12">
+                <h6 class="form-label" for="loginName">Profiliniz</h6>
+                <a href="linkedin.com/in/rumeysaturgut"> linkedin.com/in/rumeysaturgut </a>
+            </div>
+        </div> 
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <h6 class="form-label" for="loginName">Web Siteleri</h6>
+                <a href="linkedin.com/in/rumeysaturgut"> @Model.Profiles.FirstOrDefault().Website </a>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                <h6 class="form-label" for="loginName">E-posta</h6>
+                <a href="linkedin.com/in/rumeysaturgut"> @Model.Email </a>
+            </div>
+        </div>
+    </fieldset>
+</div>

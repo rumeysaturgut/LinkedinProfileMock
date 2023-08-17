@@ -1,0 +1,140 @@
+﻿@using LinkedinProfile.Models
+@model dynamic
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    
+    .circleBase {
+        border-radius: 50%;
+    }
+
+    .type1 {
+        width: 180px;
+        height: 180px;
+        border: 6px solid white;
+        background-image: url('../img/profile.png');
+        background-size: contain;
+        position:absolute;
+        top:90px;
+        left:40px;
+    }
+    #cardBanner {
+        height:200px;
+        background-image: url('../img/profile-banner.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        z-index: 0;
+
+    }
+    #userInfo {
+        padding-top:70px;
+    }
+</style>
+
+<div class="container" >
+    <div class="card mb-2" id="infosCard">
+        <div class="card-img-top" id="cardBanner">
+            <div class="circleBase type1"></div>
+        </div>
+        <div class="card-body border border-light" style="background-color:#fff;">
+            <div class="row" id="userInfo">
+                <input type="hidden" name="id" value="@ViewBag.UserGuid"/>
+                <div class="col-md-6" id="userInfosPartial"></div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-2" id="experiencesCard">
+        <div class="card-body border border-light" style="background-color:#fff;">
+            <div class="row p-0 m-0 mb-3">
+                <div class="col-md-6 mt-2"><h5>Deneyim</h5></div>
+                <div class="col-md-6" align="right">
+                    <a href="javascript:ModalEdit('/Experience/NewExperience?userId=@ViewBag.UserGuid');"><i class="fa fa-plus" style="font-size:25px"></i></a>
+                </div>
+            </div>
+            <div class="row p-0 m-0">
+                <div class="col-md-12" id="experiencesPartial"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-2" id="experiencesCard">
+        <div class="card-body border border-light" style="background-color:#fff;">
+            <div class="row p-0 m-0 mb-3">
+                <div class="col-md-6 mt-2"><h5>Eğitim</h5></div>
+                <div class="col-md-6" align="right">
+                    <a href="javascript:ModalEdit('/Education/NewEducation?userId=@ViewBag.UserGuid');"><i class="fa fa-plus" style="font-size:25px"></i></a>
+                </div>
+            </div>
+            <div class="row p-0 m-0">
+                <div class="col-md-12" id="educationsPartial"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card mb-2" id="skillsCard">
+        <div class="card-body border border-light" style="background-color:#fff;">
+            <div class="row p-0 m-0 mb-3">
+                <div class="col-md-6 mt-2"><h5>Yetenekler</h5></div>
+                <div class="col-md-6" align="right">
+                    <a href="javascript:ModalEdit('/Skill/NewSkill?userId=@ViewBag.UserGuid');"><i class="fa fa-plus" style="font-size:25px"></i></a>
+                </div>
+            </div>
+            <div class="row p-0 m-0">
+                <div class="col-md-12" id="skillsPartial"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id='myModal' class='modal fade in'>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id='myModalContent'></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+           $('#userInfosPartial').load("/User/GetUserInfos?id=@ViewBag.UserGuid");
+           $('#experiencesPartial').load("/Experience/GetUserExperiences?id=@ViewBag.UserGuid");
+           $('#educationsPartial').load("/Education/GetUserEducations?id=@ViewBag.UserGuid");
+           $('#skillsPartial').load("/Skill/GetUserSkills?id=@ViewBag.UserGuid");
+
+           $('.datepicker').datepicker({
+
+            dateFormat: "dd.mm.yy",
+            changeYear: true,
+            yearRange: "-10:+10",
+            //yearRange: "-100:-18",
+            monthNames: ["Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran", "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"],
+            dayNamesMin: ["Pa", "Pt", "Sl", "Ça", "Pe", "Cu", "Ct"],
+            firstDay: 1,
+            defaultDate: null,
+        });
+
+    });
+
+    if ('@TempData["Message"]'.length > 0) {
+        var data = '@TempData["Message"]';
+        toastr.options = { "positionClass": "toast-top-center" };
+        toastr.success(' ' + data + ' ', '', { timeOut: 1000 });
+    }
+
+    function ModalEdit(url) {
+        $('#myModalContent').load(url, function () {
+            $('#myModal').modal({
+                keyboard: true
+            }, 'show');
+        });
+    }
+    
+    if ('@TempData["ErrorMessage"]'.length > 0) {
+        var data = '@TempData["ErrorMessage"]';
+        toastr.options = { "positionClass": "toast-top-center" };
+        toastr.error(' ' + data + ' ', '', { timeOut: 1000 });
+    }
+
+
+</script>

@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/lib/toastr/js/toastr.min.js"></script>    
+<link href="~/lib/toastr/css/toastr.min.css" rel="stylesheet" />
+<style>
+    .container {
+        width: 500px;
+      }
+      #logo {
+        height:300px;
+        background-image: url('../img/Linkedin-Logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+</style>
+<div class="container">
+    <div class="row" id="logo">
+        <div class="col-md-12"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 ">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+                <form method="post" id="loginForm" name="loginForm" enctype="multipart/form-data" action="/Account/Login">
+                  <!-- Email input -->
+                  <div class="form-outline mb-4">
+                    <input name="mail" type="email" id="loginName" class="form-control" >
+                    <label class="form-label" for="loginName">Email or username</label>
+                  </div>
+
+                  <!-- Password input -->
+                  <div class="form-outline mb-4">
+                    <input name="password" type="password" id="loginPassword" class="form-control" />
+                    <label class="form-label" for="loginPassword">Password</label>
+                  </div>
+
+                  <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary btn-block mb-3">Sign in</button>
+                 </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+     $(document).ready(function () {
+         
+        
+        //setTimeout(function () {
+        //    $('#message').hide();
+        //}, 10000);
+    });
+    debugger;
+    if ('@TempData["Message"]'.length > 0) {
+        var data = '@TempData["Message"]';
+        toastr.options = { "positionClass": "toast-top-center" };
+        toastr.error( ' '+data+ ' ', '', { timeOut: 2000 });
+    }
+</script>

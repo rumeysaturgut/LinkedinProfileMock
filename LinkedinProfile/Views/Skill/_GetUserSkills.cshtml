@@ -1,0 +1,65 @@
+﻿@model List<LinkedinProfile.Models.SkillVM>
+
+<style>
+    .rateIcon {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        position:absolute;
+    }
+</style>
+<script src="~/js/bootbox.all.min.js"></script>
+@foreach (LinkedinProfile.Models.SkillVM skill in Model)
+{
+    
+    <div class="row">
+        <div class="col-md-6 pl-0">
+            <h5>@skill.SkillName</h5>
+        </div>
+        <div class="col-md-6 mt-2 pr-0" align="right">
+            <button type="button" class="btn btn-link" onclick="ConfirmModal(@skill.SkillId,@skill.UserId)"><i class="fa fa-trash" style="font-size:25px; color:black;"></i></button>
+        </div>
+    </div>
+    @if(skill.SkillRatedCount != 0)
+    {
+        <div class="row" style="height:50px;">
+            <div class="m-0 p-0" style="width:50px !important;">
+                <div class="rateIcon" style="background-image: url('../img/rateicon.jpg');"></div>
+            </div>
+            <div class="col-md-11 mt-2">
+                <span style="font-size: 18px;">@skill.SkillRatedCount onay</span>
+            </div>
+        </div> 
+    }
+    <hr />
+}
+<script>
+    debugger;
+    function ConfirmModal(skillId, userId)
+    {
+        debugger;
+        bootbox.confirm({
+            message: "Silmek istediğinize emin misiniz?",
+            buttons: {
+                confirm: {
+                    label: 'Evet',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: 'Hayır',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    $.post("/Skill/DeleteSkill?skillId=" + skillId+"&userId="+userId, function (data) {
+                        toastr.options = { "positionClass": "toast-top-center" };
+                        toastr.success('Silme işlemi başarılı.', { timeOut: 3000 });
+                        location.reload();
+                    });
+                }
+            }
+        });
+    }
+
+</script>

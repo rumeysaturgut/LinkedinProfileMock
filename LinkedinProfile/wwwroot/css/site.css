@@ -1,0 +1,22 @@
+/*html {
+    background-color: #F3F2EF;
+}*/
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/*html {
+  position: relative;
+  min-height: 100%;
+}*/
+
+main {
+    background-color: #F3F2EF !important;
+}
+
+.pb3 {
+    background-color: #F3F2EF !important;
+}

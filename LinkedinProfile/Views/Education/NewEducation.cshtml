@@ -1,0 +1,60 @@
+﻿@model LinkedinProfile.Models.User
+
+<div class="modal-header ">
+    <h4 class="modal-title" id="myModalLabel">Yeni Deneyim Ekle</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+</div>
+<div class="modal-body ">
+    <form id="newExperience" method="post" action="/Education/AddEducation" enctype="multipart/form-data">
+        <fieldset>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" name="userId" value="@ViewBag.UserId"/>
+            <div class="form-group row">
+                <label class="col-md-3 col-3 text-right control-label">Okul Adı: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="schoolName" name="schoolName" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Derece: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="degree" name="degree" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Bölüm: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="fieldOfStudy" name="fieldOfStudy" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Başlangıç Tarihi: </label>
+                <input class="form-control col-md-8 col-8 datepicker" type="datetime" id="startDate" name="startDate" autocomplete="off" required/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Bitiş Tarihi: </label>
+                <input class="form-control col-md-8 col-8 datepicker" type="datetime" id="endDate" name="endDate" autocomplete="off"/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Not: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="gpa" onkeypress="return event.charCode >= 48 && event.charCode <= 57" name="gpa" autocomplete="off"/>
+            </div>
+            <div class="form-group row">
+                <label  class="col-md-3 col-3 text-right mt-1  ">Açıklama: </label>
+                <input class="form-control col-md-8 col-8 " type="text" id="description" name="description" autocomplete="off"/>
+            </div>
+            <div class="form-group ">
+                <div class="float-right ml-2">
+                    <button class=" btn btn-danger btnCancel" data-dismiss="modal" role="button">İptal</button>
+
+                    <input type="submit" style="margin-left:3px" value="Kaydet" class="btn btn-primary" />
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+
+<script type="text/javascript">
+
+    if ('@TempData["Message"]'.length > 0) {
+        var data = '@TempData["Message"]';
+        toastr.options = { "positionClass": "toast-top-center" };
+        toastr.success(' ' + data + ' ', '', { timeOut: 1000 });
+    }
+
+</script>
