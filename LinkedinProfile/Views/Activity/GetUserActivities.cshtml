@@ -1,0 +1,52 @@
+﻿@model LinkedinProfile.Models.User
+
+<style>
+.btn-outline-dark:hover {
+    color: #fff;
+    background-color: #6eaf51;
+    border-color: #343a40;
+}
+</style>
+
+<div class="modal-header ">
+    <h4 class="modal-title" id="myModalLabel">Tüm Faaliyetler</h4>
+    <button type="button" class="close closeButton" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+</div>
+<div class="modal-body ">
+    <div class="row">
+        <input type="hidden" name="userId" value="@ViewBag.UserId"/>
+        <div class="col-md-3"><a onclick="GetActivity('Posts')" class="btn btn-light btn-outline-dark rounded-pill">Gönderiler</a></div>
+        <div class="col-md-3"><a onclick="GetActivity('Shares')"  class="btn btn-light btn-outline-dark rounded-pill">Paylaşımlar</a></div>
+        <div class="col-md-3"><a onclick="GetActivity('Comments')" class="btn btn-light btn-outline-dark rounded-pill">Yorumlar</a></div>
+        <div class="col-md-3 pl-0"><a onclick="GetActivity('Likes')" class="btn btn-light btn-outline-dark rounded-pill">Beğenmeler</a></div>
+    </div>
+    <hr/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12" id="activityPartial"></div>
+        </div>
+    </div>
+    
+    
+<div/>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+           $('#activityPartial').load("/Activity/GetActivityOfType?&userId=@ViewBag.UserId");
+    });
+
+    function GetActivity(activityType)
+    {
+        $.ajax({
+            type: "GET",
+            url: "/Activity/GetActivityOfType",
+            data: {"type": activityType, "userId" : @ViewBag.UserId},
+            success: function (result)
+            {
+                $('#activityPartial').html(result);
+            }
+        });
+    }
+
+</script>

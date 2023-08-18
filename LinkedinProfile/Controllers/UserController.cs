@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 namespace LinkedinProfile.Controllers
 {
     [Authorize]
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private readonly linkedinContext _context;
 
@@ -27,6 +27,8 @@ namespace LinkedinProfile.Controllers
         {
             var user = _context.Users.FirstOrDefaultAsync(u => u.UserGuid == userId).Result;
             ViewBag.UserGuid = user.UserGuid;
+            ViewBag.UserFullname = GetUserFullName();
+
             return View();
         }
 

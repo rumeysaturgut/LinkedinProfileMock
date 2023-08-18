@@ -1,0 +1,103 @@
+﻿@model LinkedinProfile.Models.User
+
+@if(ViewBag.Type == "Likes")
+{
+    foreach(LinkedinProfile.Models.Like like in Model.Likes)
+    {
+        <div class="row">
+            <div class="col-md-9"><span style="font-size:15px"><strong>@like.User.Firstname @like.User.Lastname bir gönderiyi beğendi.</strong></span></div>
+            <div class="col-md-3 pt-1"><span style="font-size:12px; color:gray; float:right;">@like.CreateDate.ToShortDateString()</span></div>
+        </div>
+        <div class="row"><span style="font-size:14px">@like.Post.Context</span></div>
+        <hr/>
+    }
+}
+
+@if(ViewBag.Type == "Comments")
+{
+    foreach(LinkedinProfile.Models.Comment comment in Model.Comments)
+    {
+        <div class="row">
+            <div class="col-md-9"><span style="font-size:15px; float:left;"><strong>@comment.User.Firstname @comment.User.Lastname bir gönderiye yorum yaptı.</strong></span></div>
+            <div class="col-md-3 pt-1"><span style="font-size:12px; color:gray; float:right;">@comment.CommentDate.ToShortDateString()</span></div>
+        </div>
+        <div class="row border pl-2">
+            <div class="col-md-9">
+                <span style="font-size:14px">@comment.Post.Context</span>
+                <br />
+                <span style="font-size:15px">@comment.Context</span>
+            </div>
+            <div class="col-md-3 pt-1">
+                <span style="font-size:13px; color:gray; float:right;">@comment.Post.PostDate.ToShortDateString()</span>
+            </div>
+        </div>
+        <hr/>
+
+    }
+}
+
+@if(ViewBag.Type == "Shares")
+{
+    foreach(LinkedinProfile.Models.Share share in Model.Shares)
+    {
+        <div class="row">
+            <div class="col-md-9"><span style="font-size:15px; float:left;"><strong>@share.User.Firstname @share.User.Lastname @share.Post.User.Firstname @share.Post.User.Lastname adlı kullanıcıınn gönderisini paylaştı.</strong></span></div>
+            <div class="col-md-3 pt-1"><span style="font-size:12px; color:gray; float:right;">@share.CreateDate.ToShortDateString()</span></div>
+        </div>
+        <div class="row border">
+            <div class="col-md-12">
+                <div class="row pl-4">
+                    <span style="font-size:14px;"><strong>@share.Post.User.Firstname @share.Post.User.Lastname</strong></span>
+                </div>
+                <div class="row pl-2">
+                    <div class="col-md-9">
+                        <span style="font-size:14px">@share.Post.Context</span>
+                    </div>
+                    <div class="col-md-3 pt-1">
+                        <span style="font-size:13px; color:gray; float:right;">@share.Post.PostDate.ToShortDateString()</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr/>
+
+    }
+}
+
+@if(ViewBag.Type == "Posts")
+{
+    foreach(LinkedinProfile.Models.Post post in Model.Posts)
+    {
+        <div class="row">
+            <div class="col-md-9"><span style="font-size:15px; float:left;"><strong>@post.User.Firstname @post.User.Lastname bir gönderi paylaştı.</strong></span></div>
+            <div class="col-md-3 pt-1"><span style="font-size:12px; color:gray; float:right;">@post.PostDate.ToShortDateString()</span></div>
+        </div>
+        <div class="row border">
+            <div class="col-md-12">
+                <span style="font-size:14px">@post.Context</span>
+                @if(post.Comments != null)
+                {
+                    foreach (LinkedinProfile.Models.Comment comment in post.Comments)
+                    {
+                        <hr/>
+                        <div class="row pl-4">
+                            <span style="font-size:12px;"><strong>@comment.User.Firstname @comment.User.Lastname</strong></span>
+                        </div>
+                        <div class="row pl-2">
+                            <div class="col-md-9">
+                                <span style="font-size:12px">@comment.Context</span>
+                            </div>
+                            <div class="col-md-3 pt-1">
+                                <span style="font-size:12px; color:gray; float:right;">@comment.CommentDate.ToShortDateString()</span>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+        <hr/>
+
+    }
+}
+
