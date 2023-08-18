@@ -115,7 +115,7 @@
 </div>
 
 <div id='myModal' class='modal fade in'>
-    <div class="modal-dialog">
+    <div class="modal-dialog style="width:850px;">
         <div class="modal-content">
             <div id='myModalContent'></div>
         </div>
@@ -152,6 +152,7 @@
 
     function ModalEdit(url) {
         $('#myModalContent').load(url, function () {
+            $(".modal-dialog").css("width", "800px");
             $('#myModal').modal({
                 keyboard: true
             }, 'show');

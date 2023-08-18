@@ -9,7 +9,7 @@
 </style>
 
 <div class="modal-header ">
-    <h4 class="modal-title" id="myModalLabel">Tüm Faaliyetlers</h4>
+    <h4 class="modal-title" id="myModalLabel">Tüm Faaliyetler</h4>
     <button type="button" class="close closeButton" data-dismiss="modal" aria-hidden="true">&times;</button>
 
 </div>
@@ -32,15 +32,12 @@
 <div/>
 
 <script type="text/javascript">
-    debugger;
-
     $(document).ready(function () {
-           $('#activityPartial').load("/Activity/GetActivityOfType?type=Likes&userId=@ViewBag.UserId");
+           $('#activityPartial').load("/Activity/GetActivityOfType?&userId=@ViewBag.UserId");
     });
 
     function GetActivity(activityType)
     {
-        debugger;
         $.ajax({
             type: "GET",
             url: "/Activity/GetActivityOfType",
