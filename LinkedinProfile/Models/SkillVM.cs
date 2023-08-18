@@ -3,9 +3,9 @@
     public class SkillVM
     {
         public int SkillRatedCount { get; set; }
-        public string SkillName { get; set; }
-        public int SkillId { get; set; }
-        public int UserId { get; set; }
+        public object SkillName { get; set; }
+        public object SkillId { get; set; }
+        public object UserId { get; set; }
 
     }
 

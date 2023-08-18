@@ -32,6 +32,7 @@
     #userInfo {
         padding-top:70px;
     }
+
 </style>
 
 <div class="container" >
@@ -47,6 +48,29 @@
             </div>
         </div>
     </div>
+    <div class="card mb-2" id="activitiesCard">
+        <div class="card-body border border-light" style="background-color:#fff;">
+            <div class="row p-0 m-0 mb-3">
+                <div class="col-md-12 mt-2">
+                    <h5>Faaliyet</h5>
+                    <h6>649 takipçi</h6>
+                </div>
+            </div>
+            <div class="row p-0 m-0 mb-3">
+                <div class="col-md-12 mt-2">
+                    @ViewBag.UserFullName bir gönderiye yorum yaptı.
+                    </div>
+            </div>
+            <hr />
+            <div class="row p-0 m-0 text-center">
+                <div class="col-md-12 mt-2">
+                    <a class="text-decoration-none text-dark blockquote fw-bold" href="javascrdipt:ModalEdit('/Activity/GetUserActivities?userId=@ViewBag.UserGuid');">Tüm faaliyetleri göster -> </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="card mb-2" id="experiencesCard">
         <div class="card-body border border-light" style="background-color:#fff;">
             <div class="row p-0 m-0 mb-3">
@@ -101,6 +125,8 @@
            $('#experiencesPartial').load("/Experience/GetUserExperiences?id=@ViewBag.UserGuid");
            $('#educationsPartial').load("/Education/GetUserEducations?id=@ViewBag.UserGuid");
            $('#skillsPartial').load("/Skill/GetUserSkills?id=@ViewBag.UserGuid");
+
+           $('.modal-dialog').addClass("modal-lg");
 
            $('.datepicker').datepicker({
 

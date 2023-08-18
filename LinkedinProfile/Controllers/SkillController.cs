@@ -10,7 +10,6 @@ namespace LinkedinProfile.Controllers
     [Authorize]
     public class SkillController : BaseController
     {
-
         private readonly linkedinContext _context;
 
         public SkillController(linkedinContext context)
@@ -22,17 +21,17 @@ namespace LinkedinProfile.Controllers
         {
             if (!string.IsNullOrEmpty(id))
             {
+                var sql = @$"SELECT COUNT(DISTINCT su.user_rated_id) as SkillRatedCount ,s.skill_name as SkillName, s.skill_id AS Skilld 
+                    FROM linkedin.dbo.skill_users su JOIN linkedin.dbo.skills s ON su.skill_id = s.skill_id
+                    WHERE su.user_id={GetUserId()} GROUP BY s.skill_name, s.skill_id";
 
-                var result = Extensions.RawSqlQuery("SELECT COUNT(DISTINCT su.user_rated_id) as SkillRatedCount ,s.skill_name as SkillName, s.skill_id AS Skilld " +
-                    "FROM linkedin.dbo.skill_users su JOIN linkedin.dbo.skills s ON su.skill_id = s.skill_id " +
-                    $"WHERE su.user_id={GetUserId()} " +
-                    "GROUP BY s.skill_name, s.skill_id", x => new SkillVM
-                    {
-                        SkillRatedCount = (int)x[0],
-                        SkillName = (string)x[1],
-                        SkillId = (int)x[2],
-                        UserId = GetUserId(),
-                    });
+                var result = Extensions.RawSqlQuery(sql, x => new SkillVM
+                {
+                    SkillRatedCount = Convert.IsDBNull(x[0]) ? 0 : (int)x[0],
+                    SkillName = Convert.IsDBNull(x[1]) ? 0 : x[1],
+                    SkillId = Convert.IsDBNull(x[2]) ? 0 : x[2],
+                    UserId = GetUserId(),
+                });
 
                 if (result == null)
                 {

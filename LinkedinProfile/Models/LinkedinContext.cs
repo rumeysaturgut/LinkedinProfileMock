@@ -32,10 +32,16 @@ namespace LinkedinProfile.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("data source=PCUSK0022;initial catalog=linkedin;user id=sa;password=root1234;TrustServerCertificate=true");
+                IConfigurationRoot configuration = new ConfigurationBuilder()
+               .SetBasePath(Directory.GetCurrentDirectory())
+               .AddJsonFile("appsettings.json")
+               .Build();
+                var connectionString = configuration.GetConnectionString("DefaultConnection");
+                optionsBuilder.UseSqlServer(connectionString);
             }
         }
+
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -46,8 +52,9 @@ namespace LinkedinProfile.Models
                 entity.Property(e => e.CommentId).HasColumnName("comment_id");
 
                 entity.Property(e => e.CommentDate)
-                    .HasColumnType("date")
-                    .HasColumnName("comment_date");
+                    .HasColumnType("datetime")
+                    .HasColumnName("comment_date")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.Context)
                     .HasColumnType("text")
@@ -187,6 +194,11 @@ namespace LinkedinProfile.Models
 
                 entity.Property(e => e.LikeId).HasColumnName("like_id");
 
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("create_date")
+                    .HasDefaultValueSql("(getdate())");
+
                 entity.Property(e => e.PostId).HasColumnName("post_id");
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
@@ -215,8 +227,9 @@ namespace LinkedinProfile.Models
                     .HasColumnName("context");
 
                 entity.Property(e => e.PostDate)
-                    .HasColumnType("date")
-                    .HasColumnName("post_date");
+                    .HasColumnType("datetime")
+                    .HasColumnName("post_date")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.UserId).HasColumnName("user_id");
 
@@ -269,6 +282,11 @@ namespace LinkedinProfile.Models
                 entity.ToTable("shares");
 
                 entity.Property(e => e.ShareId).HasColumnName("share_id");
+
+                entity.Property(e => e.CreateDate)
+                    .HasColumnType("datetime")
+                    .HasColumnName("create_date")
+                    .HasDefaultValueSql("(getdate())");
 
                 entity.Property(e => e.PostId).HasColumnName("post_id");
 

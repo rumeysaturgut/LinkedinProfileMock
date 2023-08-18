@@ -1,0 +1,25 @@
+﻿@model LinkedinProfile.Models.User
+
+@if(ViewBag.Type == "Likes")
+{
+    foreach(LinkedinProfile.Models.Like like in Model.Likes)
+    {
+        <div class="row"><span style="font-size:15px">@like.User.Firstname @like.User.Lastname bir gönderiyi beğendi</span></div>
+        <div class="row"><span style="font-size:14px">@like.Post.Context</span></div>
+        <hr/>
+    }
+}
+
+@if(ViewBag.Type == "Comments")
+{
+    foreach(LinkedinProfile.Models.Comment comment in Model.Comments)
+    {
+        <div class="row"><span style="font-size:15px">@comment.User.Firstname @comment.User.Lastname bir gönderiye yorum yaptı</span></div>
+        <div class="row"><span style="font-size:13px">@comment.Post.Context</span></div>
+        <div class="row"><span style="font-size:15px"><strong>@comment.Context</strong></span></div>
+
+        <hr/>
+
+    }
+}
+
