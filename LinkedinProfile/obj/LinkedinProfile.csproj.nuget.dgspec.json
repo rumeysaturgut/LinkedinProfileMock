@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\rumeysa.turgut\\Documents\\repo\\LinkedinProfile\\LinkedinProfile\\LinkedinProfile.csproj": {}
+    "C:\\Users\\user\\Documents\\repo\\LinkedinProfileMock\\LinkedinProfile\\LinkedinProfile.csproj": {}
   },
   "projects": {
-    "C:\\Users\\rumeysa.turgut\\Documents\\repo\\LinkedinProfile\\LinkedinProfile\\LinkedinProfile.csproj": {
+    "C:\\Users\\user\\Documents\\repo\\LinkedinProfileMock\\LinkedinProfile\\LinkedinProfile.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\rumeysa.turgut\\Documents\\repo\\LinkedinProfile\\LinkedinProfile\\LinkedinProfile.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Documents\\repo\\LinkedinProfileMock\\LinkedinProfile\\LinkedinProfile.csproj",
         "projectName": "LinkedinProfile",
-        "projectPath": "C:\\Users\\rumeysa.turgut\\Documents\\repo\\LinkedinProfile\\LinkedinProfile\\LinkedinProfile.csproj",
-        "packagesPath": "C:\\Users\\rumeysa.turgut\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\rumeysa.turgut\\Documents\\repo\\LinkedinProfile\\LinkedinProfile\\obj\\",
+        "projectPath": "C:\\Users\\user\\Documents\\repo\\LinkedinProfileMock\\LinkedinProfile\\LinkedinProfile.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Documents\\repo\\LinkedinProfileMock\\LinkedinProfile\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\rumeysa.turgut\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.413\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

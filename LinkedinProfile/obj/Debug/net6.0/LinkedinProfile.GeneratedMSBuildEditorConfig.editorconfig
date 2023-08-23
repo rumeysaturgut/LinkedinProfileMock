@@ -5,100 +5,101 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LinkedinProfile
 build_property.RootNamespace = LinkedinProfile
-build_property.ProjectDir = C:\Users\rumeysa.turgut\Documents\repo\LinkedinProfile\LinkedinProfile\
+build_property.ProjectDir = C:\Users\user\Documents\repo\LinkedinProfileMock\LinkedinProfile\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\rumeysa.turgut\Documents\repo\LinkedinProfile\LinkedinProfile
+build_property.MSBuildProjectDirectory = C:\Users\user\Documents\repo\LinkedinProfileMock\LinkedinProfile
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Account/Login.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Activity/GetUserActivities.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Activity/GetUserActivities.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpdHlcR2V0VXNlckFjdGl2aXRpZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Activity/_DetailsOfActivity.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Activity/_DetailsOfActivity.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpdHlcX0RldGFpbHNPZkFjdGl2aXR5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Education/EditEducation.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Education/EditEducation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXEVkaXRFZHVjYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Education/NewEducation.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Education/NewEducation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXE5ld0VkdWNhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Education/_GetUserEducations.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Education/_GetUserEducations.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWR1Y2F0aW9uXF9HZXRVc2VyRWR1Y2F0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Experience/EditExperience.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Experience/EditExperience.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZVxFZGl0RXhwZXJpZW5jZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Experience/Index.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Experience/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Experience/NewExperience.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Experience/NewExperience.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZVxOZXdFeHBlcmllbmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Experience/_GetUserExperiences.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Experience/_GetUserExperiences.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXhwZXJpZW5jZVxfR2V0VXNlckV4cGVyaWVuY2VzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Home/Index.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Home/Privacy.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Shared/Error.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Skill/NewSkill.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Skill/NewSkill.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcTmV3U2tpbGwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Skill/_GetUserSkills.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Skill/_GetUserSkills.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2tpbGxcX0dldFVzZXJTa2lsbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/User/CommunicationInfos.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/User/CommunicationInfos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxDb21tdW5pY2F0aW9uSW5mb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/User/Index.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/User/_GetUserInfos.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/User/_GetUserInfos.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfR2V0VXNlckluZm9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/_ViewImports.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/_ViewStart.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/rumeysa.turgut/Documents/repo/LinkedinProfile/LinkedinProfile/Views/Shared/_Layout.cshtml]
+[C:/Users/user/Documents/repo/LinkedinProfileMock/LinkedinProfile/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-s4j9n9dysh
